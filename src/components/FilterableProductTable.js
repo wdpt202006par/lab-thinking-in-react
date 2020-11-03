@@ -3,11 +3,14 @@ import ProductTable from './ProductTable'
 import SearchBar from './SearchBar'
 
 class FilterableProductTable extends React.Component {
-    filter = () => {
-        
+    state ={
+        query:''
+    }
+    filter = (query) => {
+        let productsCopy = [...this.props.products.data]
+        return productsCopy.filter(product => product.name.toLowerCase().includes(query))
     }
     render(){
-        console.log('props.products filter',this.props.products)
         return(
             <div>
                 <SearchBar />
