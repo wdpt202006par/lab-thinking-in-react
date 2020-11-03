@@ -3,6 +3,9 @@ import ProductTable from './ProductTable'
 import SearchBar from './SearchBar'
 
 class FilterableProductTable extends React.Component {
+    filter = () => {
+        
+    }
     render(){
         console.log('props.products filter',this.props.products)
         return(
