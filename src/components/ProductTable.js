@@ -1,22 +1,37 @@
 import React from 'react';
-import ProductRow from './ProductRow';
-import './App.css';
-
-
 
 class ProductTable extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          //todo
-        };
-      }
-    render() {
-    return (
+  render() {
+    return(
         <div className="box">
+          <article className="media">
+            
+            <div className="media-content">
+              <div className="content">
+                <p>
+                  <strong>{this.props.name}</strong> <br />
+                  <small> ${this.props.price} </small>
+                </p>
+              </div>
+            </div>
+            <div className="media-right">
+              <div className="field has-addons">
+                <div className="control">
+                  <input className="input" type="number" value={this.props.category} />
+                </div>
+   
+          </div>
         </div>
-        )
-    }
-  };
+      </article>
+  </div>
+         
+)
+}
+}
+
 export default ProductTable;
+
+
+
+
 
