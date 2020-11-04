@@ -1,21 +1,17 @@
 import React from 'react';
-import './App.css';
 
 
+const ProductRow = (props) => {
 
-class ProductRow extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          //todo
-        };
-      }
-    render() {
     return (
         <div className="box">
+            <tr>
+              <td>{props.product.name}</td>
+              <td>{props.product.price}</td>
+              <td>{props.product.stocked}</td>
+            </tr>
         </div>
         )
-    }
   };
 export default ProductRow;
 

@@ -1,21 +1,29 @@
 import React from 'react';
-import './App.css';
-
-
 
 class SearchBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          //todo
-        };
+    state = {
+        search: '',
+    };
+    
+    handleInputChange = (event) => {
+        let value = event.target.value;
+        const name = event.target.name;
+        
+        this.setState({
+          [name]: value,
+        });
+    
+        this.props.sendQuery(value);
+      };
+    
+      render() {
+        return (
+            <div>
+                <input type="text" name="search" placeholder="Search" value={this.state.search} onChange={this.handleInputChange}></input>
+            </div>
+        );
       }
-    render() {
-    return (
-        <div className="box">
-        </div>
-        )
     }
-  };
-export default SearchBar;
+
+export default SearchBar
 
