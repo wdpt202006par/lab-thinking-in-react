@@ -10,16 +10,18 @@ class ProductTable extends React.Component {
         return(
             <div>
                <table>
-                   <thead>
+                   <tbody>
+                   <tr>
                        <th>Name</th>
                        <th>Price</th>
-                   </thead>
+                   </tr>
                    {this.props.products.map((product,index) => {
                        return (
-                        <div key= {index}>
-                            <ProductRow {...product} />
-                        </div>)
-                   })}
+                        
+                            <ProductRow key= {index} {...product} />
+                        
+                   )})}
+                   </tbody>
                 </table> 
             </div>
 

@@ -3,21 +3,25 @@ import React from 'react';
 class ProductRow extends React.Component {
     render(){
         return(
-            <div>
+           <tr>
                 {
                     this.props.stocked ? 
-                    <tr>
-                        <td>{this.props.name}</td>
-                        <td>{this.props.price}</td>
-                    </tr> :
-                    <tr>
-                        <td style = {{color:'red'}}>{this.props.name}</td>
-                        <td>{this.props.price}</td>
-                    </tr>
+                    <td colSpan='2'>
+                        <span>{this.props.name}</span>
+                        <span>{this.props.price}</span>
+                    </td>
+                        
+                     :
+                    <td>
+                        <span style = {{color:'red'}}>{this.props.name}</span>
+                        <span>{this.props.price}</span>
+                    </td>
+                        
+                    
                 }
                 
-
-            </div>
+            </tr>
+          
 
         )
     }
