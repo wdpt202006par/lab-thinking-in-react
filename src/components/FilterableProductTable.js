@@ -6,7 +6,7 @@ class FilterableProductTable extends Component {
   state = {
     products: this.props.products.data,
     filteredProductsBySearch: '',
-    inStock: false,
+    // inStock: false,
   };
 
   filterProducts = (searchInput) => {
@@ -14,6 +14,7 @@ class FilterableProductTable extends Component {
       (product) => product.stocked
     );
     let filteredProducts;
+
     if (searchInput.inStock) {
       filteredProducts = filteredProductArrByInStock.filter((product) =>
         product.name.toLowerCase().startsWith(searchInput.search)
@@ -22,16 +23,22 @@ class FilterableProductTable extends Component {
       filteredProducts = this.state.products.filter((product) =>
         product.name.toLowerCase().startsWith(searchInput.search)
       );
-      this.setState({ filteredProductsBySearch: filteredProducts });
     }
+    this.setState({ filteredProductsBySearch: filteredProducts });
   };
-  // checkInStock = (searchInput) => {
-  // 	this.setState({ [name]: value },
-  // 			this.handleSubmit)
-  // 			this.handleSubmit()
-  //
-  // 	}
-  // }
+  //   checkInStock = (searchInput) => {
+  //     searchInput = this.state.inStock de Search Bar
+  //     const filteredProductArrByInStock = [];
+  //     const filteredProducts = [];
+  //     if (searchInput) {
+  //       this.setState({ inStock: true });
+  //     }
+  //     if (this.state.inStock) {
+  //       filteredProducts = this.state.products.filter((product) => (product) =>
+  //         product.stocked === false
+  //       );
+  //     }
+  //   };
 
   render() {
     //console.log('this.props.products', this.props.products);
@@ -42,7 +49,7 @@ class FilterableProductTable extends Component {
         <SearchBar
           products={this.state.products}
           searchTerm={this.filterProducts}
-          inStock={this.checkInStock}
+          //inStock={this.checkInStock}
         />
         {this.state.filteredProductsBySearch !== '' ? (
           <ProductTable products={this.state.filteredProductsBySearch} />
