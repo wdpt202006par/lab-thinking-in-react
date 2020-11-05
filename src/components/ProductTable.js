@@ -18,8 +18,8 @@ render(){
     </thead>
     <tbody>
 
-      {this.props.products.map(row => {
-          return (<ProductRow name ={row.name} price={row.price }/>)})
+      {this.props.productInfilterable.map(product => {
+          return (<ProductRow productIntable ={product}/>)})
       }
     </tbody>
 </table>
