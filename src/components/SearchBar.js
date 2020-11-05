@@ -1,23 +1,13 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-    state = {
-        search: ''
-    };
-
-    isTyping = (e) => {
-        this.setState({
-            search: this.props.searchProduct(this.state)
-        })
-    };
-
     render() {
         return(
             <div>
                 <form>
                     <div className="form-group">
                         <label htmlFor="search">Search</label>
-                        <input type="text" id="search" className="form-control" onChange={this.isTyping} />
+                        <input type="text" id="search" className="form-control" onChange={this.props.search} value={this.props.query} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="stock">Only show products on stock</label>
