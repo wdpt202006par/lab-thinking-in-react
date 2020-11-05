@@ -18,7 +18,7 @@ class ProductTable extends React.Component {
                    {this.props.products.map((product,index) => {
                        return (
                         
-                            <ProductRow key= {index} {...product} />
+                            <ProductRow key= {index} {...product}/>
                         
                    )})}
                    </tbody>
