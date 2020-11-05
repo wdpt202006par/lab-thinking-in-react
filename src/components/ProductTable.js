@@ -16,9 +16,9 @@ console.log("props:", props.products)
         </thead>
         
         <tbody>
-        {props.products.map(product => {
+        {props.productsInFilterable.map(product => {
           return (
-            <ProductRow key={product.name} toto={product}/>
+            <ProductRow key={product.name} productInProductTable={product}/>
           )
         })}
 
