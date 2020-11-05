@@ -5,20 +5,29 @@ import ProductTable from './ProductTable';
 class FilterableProductTable extends Component {
 
 	state = {
-		products: this.props.products.data,filteredProductsBySearch: ''
+		products: this.props.products.data,
+		filteredProductsBySearch: '',
+		inStock: false
 	}
 
 	filterProducts = (searchInput) => {
 		const filteredProductArrByInStock = this.state.products.filter(product => product.stocked)
 		let filteredProducts
 
+		
+		this.setState(
+			{filteredProductsBySearch: filteredProducts})
+	}
+	checkInStock = (searchInput) => {
+		this.setState({ [name]: value },
+				this.handleSubmit)
+				this.handleSubmit()
 		if(searchInput.inStock){
 			filteredProducts = filteredProductArrByInStock.filter(product => product.name.toLowerCase().startsWith(searchInput.search))
+			
 		} else {
 			filteredProducts = this.state.products.filter(product => product.name.toLowerCase().startsWith(searchInput.search))
 		}
-		this.setState(
-			{filteredProductsBySearch: filteredProducts})
 	}
 
   render() {

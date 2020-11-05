@@ -9,6 +9,7 @@ class SearchBar extends Component {
 
 	changeHandler = (e) => {
 		let { name, value, type } = e.target;
+		console.log(('event:', e.target));
 		if(type === 'checkbox'){
 			value = e.target.checked;
 		}
@@ -20,6 +21,7 @@ class SearchBar extends Component {
 
 	handleSubmit = () => {
 		this.props.searchTerm(this.state)
+		console.log('SearchTerm: ', this.props.searchTerm(this.state));
 	}
 
   render() {
@@ -27,7 +29,7 @@ class SearchBar extends Component {
       <div>
         <p>Search</p>
 				<form action="">
-					<input type="text" name="search" placeholder="Search..." value={this.state.search} onChange={this.changeHandler} />
+					<input type="search" name="search" placeholder="Search..." value={this.state.search} onChange={this.changeHandler} />
 
 					<input type="checkbox" name="inStock" id="inStock" value={this.state.inStock} onChange={this.changeHandler} />
 					<p style={{fontWeight: 'bold', textDecorationLine: 'underline'}}>Only show products on stock</p>
