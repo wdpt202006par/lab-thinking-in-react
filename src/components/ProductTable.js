@@ -8,7 +8,7 @@ class ProductTable extends React.Component {
       return (
       <table>
         <tbody>
-          {products.data.map((product,id)=> {
+          {products.map((product,id)=> {
             return <ProductRow product={product} key={id}/>
           })}
         </tbody>

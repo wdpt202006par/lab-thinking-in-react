@@ -1,17 +1,17 @@
 import React from 'react';
 import ProductTable from './ProductTable'
 import SearchBar from './SearchBar'
-import data from '../data.json'
+import json from '../data.json'
 
 
 class FilterableProductTable extends React.Component {
   state = {
-    products: data,
+    products: json.data ,
     query: ''
   };
 
 
-  sendQuery = (val) => {
+  sendQuery = (val) => { // lab IronNutrition
     this.setState({
       query: val
     })
@@ -19,10 +19,12 @@ class FilterableProductTable extends React.Component {
 
   render() {
 
-    const filteredProducts = this.state.query 
+    // const copyData = [...this.state.products]
+    console.log("Coucou")
+    const filteredProducts = this.state.query
     ? this.state.products.filter((product) => product.name.includes(this.state.query) || 
     product.name.toLowerCase().includes(this.state.query) ||
-    product.name.toCase().includes(this.state.query) ||
+    product.name.toUpperCase().includes(this.state.query) ||
     product.price.toString().includes(Number(this.state.query)
     )) 
     : this.state.products;
@@ -33,9 +35,9 @@ class FilterableProductTable extends React.Component {
 
         <ProductTable products={filteredProducts} />
 
-        {/* {filteredProducts.map((product, i) => {
+      {/* {filteredProducts.map((product, i) => {
             return <ProductTable {...product} key={i} />;
-          })} */}
+          })}   */}
       </div>
          
 )

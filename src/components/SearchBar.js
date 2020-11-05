@@ -6,8 +6,8 @@ class SearchBar extends React.Component {
     };
     
     handleInputChange = (event) => {
-        let value = event.target.value;
-        const name = event.target.name;
+        let value = event.target.value; // React | Forms
+        const name = event.target.name; // React | Forms
         
         this.setState({
           [name]: value,
