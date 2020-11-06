@@ -7,6 +7,14 @@ class SearchBar extends React.Component {
                 <h2>Search</h2>
                 <form>
                     <input type= 'text' name='search'  placeholder='Search' value= {this.props.query} onChange={this.props.search}  />
+                    
+                    
+                </form>
+                <form>
+                <label>
+                        <input type='checkbox' name='inStock' onChange={this.props.check}/>
+                        Only show products on stock
+                    </label>
                 </form>
             </div>
             
